@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -376,6 +377,7 @@ const trackBadge: Record<Job["track"], string> = {
 };
 
 const Career: React.FC = () => {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [track, setTrack] = useState<"All" | Job["track"]>("All");
   const [openJob, setOpenJob] = useState<Job | null>(null);
@@ -488,35 +490,35 @@ const Career: React.FC = () => {
                   <button
                     onClick={() => {
                       if (job.id === 'ai-architect') {
-                        window.location.href = '/career/ai-architect';
+                        navigate('/career/ai-architect');
                       } else if (job.id === 'mlops-engineer') {
-                        window.location.href = '/career/mlops-engineer';
+                        navigate('/career/mlops-engineer');
                       } else if (job.id === 'ai-gov-lead') {
-                        window.location.href = '/career/ai-gov-lead';
+                        navigate('/career/ai-gov-lead');
                       } else if (job.id === 'prompt-engineer') {
-                        window.location.href = '/career/prompt-engineer';
+                        navigate('/career/prompt-engineer');
                       } else if (job.id === 'cloud-ai-engineer') {
-                        window.location.href = '/career/cloud-ai-engineer';
+                        navigate('/career/cloud-ai-engineer');
                       } else if (job.id === 'embedded-ai-dev') {
-                        window.location.href = '/career/embedded-ai-developer';
+                        navigate('/career/embedded-ai-developer');
                       } else if (job.id === 'quantum-ml-eng') {
-                        window.location.href = '/career/quantum-ml-engineer';
+                        navigate('/career/quantum-ml-engineer');
                       } else if (job.id === 'ai-security-analyst') {
-                        window.location.href = '/career/ai-security-analyst';
+                        navigate('/career/ai-security-analyst');
                       } else if (job.id === 'rag-systems-eng') {
-                        window.location.href = '/career/rag-systems-engineer';
+                        navigate('/career/rag-systems-engineer');
                       } else if (job.id === 'autonomy-lead') {
-                        window.location.href = '/career/ai-autonomous-systems-lead';
+                        navigate('/career/ai-autonomous-systems-lead');
                       } else if (job.id === 'data-strategy-mgr') {
-                        window.location.href = '/career/ai-data-strategy-manager';
+                        navigate('/career/ai-data-strategy-manager');
                       } else if (job.id === 'agentic-platform-eng') {
-                        window.location.href = '/career/agentic-ai-platform-engineer';
+                        navigate('/career/agentic-ai-platform-engineer');
                       } else if (job.id === 'enterprise-ai-pm') {
-                        window.location.href = '/career/enterprise-ai-product-manager';
+                        navigate('/career/enterprise-ai-product-manager');
                       } else if (job.id === 'ai-infra-architect') {
-                        window.location.href = '/career/ai-infrastructure-architect';
+                        navigate('/career/ai-infrastructure-architect');
                       } else if (job.id === 'ai-legal-expert') {
-                        window.location.href = '/career/ai-compliance-legal-expert';
+                        navigate('/career/ai-compliance-legal-expert');
                       } else {
                         setRedirectJobId(job.id);
                       }
